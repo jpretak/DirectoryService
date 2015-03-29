@@ -1,5 +1,10 @@
 package dino;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,14 +23,7 @@ public class Dir implements Directory {
 	public List<Notebook> getAllNotebooks() {
 		// TODO Auto-generated method stub
 		List<Notebook> returnval;
-		returnval = new ArrayList<Notebook>();
-		for(Notebook notebook: notebooks)
-		{
-			String url = notebook.getPrimaryNotebookUrl();
-			
-			//todo curl this to primary server
-			returnval.add(notebook);
-		}
+		returnval = notebooks;
 		return returnval;
 	}
 
